@@ -8,6 +8,7 @@ import unittest
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 SKILL_FILES = [
+    "skills/code-simplifier/SKILL.md",
     "skills/review-dry/SKILL.md",
     "skills/review-kiss/SKILL.md",
     "skills/review-yagni/SKILL.md",
@@ -130,6 +131,7 @@ class RepoIntegrityTests(unittest.TestCase):
 
         readme = (REPO_ROOT / "README.md").read_text()
         self.assertIn("skills/", readme)
+        self.assertIn("code-simplifier", readme)
         self.assertIn("session-start", readme)
         self.assertIn("Claude", readme)
         self.assertIn("Codex", readme)
@@ -152,15 +154,15 @@ class RepoIntegrityTests(unittest.TestCase):
         shell_scripts = [
             (
                 "install/install-claude.sh",
-                [".claude-plugin/plugin.json", "skills/review-dry/SKILL.md", "hooks/session-start.sh", "docs/README.claude.md"],
+                [".claude-plugin/plugin.json", "skills/review-dry/SKILL.md", "skills/code-simplifier/SKILL.md", "hooks/session-start.sh", "docs/README.claude.md"],
             ),
             (
                 "install/install-codex.sh",
-                [".codex-plugin/plugin.json", "skills/review-dry/SKILL.md", "commands/review-dry.md", "docs/README.codex.md"],
+                [".codex-plugin/plugin.json", "skills/review-dry/SKILL.md", "skills/code-simplifier/SKILL.md", "commands/review-dry.md", "docs/README.codex.md"],
             ),
             (
                 "install/install-cursor.sh",
-                [".cursor-plugin/plugin.json", "skills/review-dry/SKILL.md", "hooks/hooks-cursor.json", "agents/dry-reviewer.md"],
+                [".cursor-plugin/plugin.json", "skills/review-dry/SKILL.md", "skills/code-simplifier/SKILL.md", "hooks/hooks-cursor.json", "agents/dry-reviewer.md"],
             ),
             (
                 "install/install-copilot-vscode.sh",

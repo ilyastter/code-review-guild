@@ -1,6 +1,6 @@
 # Code Review Guild
 
-Code Review Guild is a skill-first plugin repository for principle-based code review. The core product is a shared `skills/` library for `DRY`, `KISS`, `YAGNI`, `SoC`, `SOLID`, plus a consolidated `all-principles` review. Harness-specific packaging for Claude, Codex, Cursor, and GitHub Copilot is layered on top of those skills.
+Code Review Guild is a skill-first plugin repository for principle-based code review and behavior-preserving code simplification. The core product is a shared `skills/` library for `DRY`, `KISS`, `YAGNI`, `SoC`, `SOLID`, a consolidated `all-principles` review, and the general `code-simplifier` workflow. Harness-specific packaging for Claude, Codex, Cursor, and GitHub Copilot is layered on top of those skills.
 
 ## Support model
 
@@ -22,6 +22,7 @@ Automatic bootstrap is intentionally narrow. It exists to expose Code Review Gui
 
 ## Public skill catalog
 
+- `code-simplifier`: review recently changed code and apply safe maintainability simplifications without behavior or API drift
 - `review-dry`: harmful duplication only
 - `review-kiss`: unnecessary complexity only
 - `review-yagni`: speculative design only
